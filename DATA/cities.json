@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "cityName": "Gurugram",
+    "country": "India",
+    "emoji": "🇮🇳",
+    "date": "2025-07-03T00:13:51.443Z",
+    "notes": "",
+    "position": {
+      "lat": "28.424976670137422",
+      "lng": "76.99357851232588"
+    }
+  },
+  {
+    "id": 2,
+    "cityName": "Gola Gokarannath",
+    "country": "India",
+    "emoji": "🇮🇳",
+    "date": "2025-07-03T00:15:06.933Z",
+    "notes": "",
+    "position": {
+      "lat": "28.2689920449487",
+      "lng": "80.68521227152758"
+    }
+  }
+]
