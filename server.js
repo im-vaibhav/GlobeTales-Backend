@@ -27,11 +27,11 @@ const connectDB = async () => {
 connectDB();
 
 //API ENDPOINTS
-app.use("/api/user", userRouter);
-app.use("/api/city",authUser, cityRouter);
+app.use("/user", userRouter);
+app.use("/city",authUser, cityRouter);
 
 
-app.get("/api", (req, res) => {
+app.get("/", (req, res) => {
   res.json({
     message: "API Working",
   });
