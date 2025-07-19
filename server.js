@@ -31,7 +31,7 @@ app.use("/api/user", userRouter);
 app.use("/api/city",authUser, cityRouter);
 
 
-app.get("/api", () => {
+app.get("/api", (req, res) => {
   res.json({
     message: "API Working",
   });
