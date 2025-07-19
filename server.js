@@ -5,15 +5,15 @@ const cityRouter=require("./routes/cityRoutes")
 const app = express();
 const mongoose = require("mongoose");
 const { authUser } = require("./middlewares/auth");
+require("dotenv").config();
 
 //MIDDLEWARE
 app.use(cors());
 app.use(express.json());
 
-//MONGODB CONFIG
-const mongoURI =
-  "mongodb+srv://vaibhavraj9958:JYqNJQxHFhqwDT1H@cluster0.nxhconn.mongodb.net/";
-const connectDB = async () => {
+//MONGODB CONFIG 
+const mongoURI = process.env.MONGO_DB_URI; 
+const connectDB = async () => { 
   try {
     await mongoose.connect(mongoURI);
 
