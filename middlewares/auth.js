@@ -1,4 +1,5 @@
 const jwt=require("jsonwebtoken")
+require("dotenv").config();
 
 exports.authUser = (req, res, next) => {
   const token = req.headers.authorization?.split(" ")[1];
@@ -6,7 +7,7 @@ exports.authUser = (req, res, next) => {
     return res.status(401).json({ error: "Please Login" });
   }
   try {
-    const decoded = jwt.verify(token, "MYSECRET");
+    const decoded = jwt.verify(token, process.env.SECRET);
     req.userId = decoded.id;
     next();
   }

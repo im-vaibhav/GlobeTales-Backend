@@ -1,6 +1,9 @@
 const UserModel = require("./../models/userModel")
 const jwt = require("jsonwebtoken");
-const bcrypt=require("bcrypt")
+const bcrypt = require("bcrypt")
+require("dotenv").config();
+
+
 exports.signup = async (req, res) => {
 
   try {
@@ -35,7 +38,7 @@ exports.signup = async (req, res) => {
     password:hashedPassword,
   })
 
-  const token = jwt.sign({ id: newUser._id }, "MYSECRET", {
+  const token = jwt.sign({ id: newUser._id }, process.env.SECRET, {
     expiresIn: "1h",
   });
 
@@ -87,7 +90,9 @@ exports.login = async (req, res) => {
     }
 
     // Generate JWT token
-    const token = jwt.sign({ id: user._id }, "MYSECRET", { expiresIn: "1h" });
+    const token = jwt.sign({ id: user._id }, process.env.SECRET, {
+      expiresIn: "1h",
+    });
 
     // Send response
     res
